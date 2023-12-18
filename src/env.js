@@ -9,11 +9,7 @@ export const env = createEnv({
   server: {
     DATABASE_URL: z
       .string()
-      .url()
-      .refine(
-        (str) => !str.includes("mongodb+srv://darshilmahraur67:darshilmahraur67@curd-app.fxcolsn.mongodb.net/todo"),
-        "You forgot to change the default URL"
-      ),
+      .url(),
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
